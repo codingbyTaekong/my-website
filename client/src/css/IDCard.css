@@ -1,0 +1,30 @@
+.IDCard {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 10%;
+    left: 35%;
+    width: 340px;
+    height: 110px;
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.Profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    margin-left: 15px;
+}
+
+.Profile img {
+    width: 100%;
+}
+
+.IDCard ul {
+    margin-left: 15px;
+}
