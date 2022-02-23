@@ -40,7 +40,6 @@ function IDCard() {
       <div className='goal cardContainer'>
         <h1>목표 및 다짐</h1>
         <div className='desContainer'>
-          <span>></span>
           <p className='txt'>
             특정 언어에 종속되어 있는 개발자가 아닌 상황에 따라 유기적으로 언어를 선택할 수 있는 개발자가 되고 싶습니다. 그러기 위해서 기본기가 가장 중요한 것 같습니다.<br/>
             오늘보다 나은 내일을 위해 배움을 끊임없이 갈구하고, 사용자에게 좋은 경험을 전달하기 위해 노력하고 있습니다.
