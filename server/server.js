@@ -1,21 +1,30 @@
 const express = require('express');
-const app = express();
 const defaultRouter = require('./Router/default');
 const bodyParser = require('body-parser');
-
 const userRouter = require('./Router/user');
+const cookieParser = require('cookie-parser');
+const cors = require('cors')
 
 
-app.use('/api', defaultRouter);
+
+const app = express();
+app.use(cors({orgin: "http://localhost:3000"}))
+
+
+
+
 app.use(express.json());
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(cookieParser())
 
 const port = 5000;
 app.listen(port, ()=> console.log(`current Port : ${port}`))
 
 
 // 라우터
+app.use('/api', defaultRouter);
 app.use('/user', userRouter);
+
 
 
 

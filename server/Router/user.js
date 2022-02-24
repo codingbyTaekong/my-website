@@ -6,8 +6,18 @@ const user = require('../controllers/user');
 const router = express.Router(); 
 // 회원가입 jwt 미들웨어 필여없음
 router.post('/signup', user.add_user);
-router.post('/checkid', user.variation_user);
+// id 중복 체크
+router.post('/checkid', user.varify_user);
+// router.get('/checktoken', (req, res)=> {
+//     let authHeader = req.headers['authorization'];
+//     console.log(authHeader);
+//     res.send(authHeader)
+// })
+
+// jwt 체크
+
 // 로그인
+router.post('/login', user.login)
 
 // 로그아웃
 

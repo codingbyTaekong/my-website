@@ -1,8 +1,6 @@
 var mysql = require('mysql2');
-require('dotenv').config({
-    path : ".env"
-})
-var db_info = {
+require('dotenv').config({ path: '.env'}); 
+const db_info = {
     host : `${process.env.DB_HOST}`,
     user : `${process.env.DB_ID}`,
     password : `${process.env.DB_PWD}`,

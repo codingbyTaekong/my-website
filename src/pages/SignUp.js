@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {TextField,InputAdornment} from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import PersonIcon from '@mui/icons-material/Person';
@@ -10,7 +10,16 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
+axios.defaults.withCredentials = true;
+
+
 function SignUp() {
+  useEffect(()=> {
+    axios.get('/user/checktoken')
+    .then((res)=> {
+      console.log(res.data)
+    })
+  })
   const [inputs, setInputs] = useState({
     id : '',
     nickname : '',

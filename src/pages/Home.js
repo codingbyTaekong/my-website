@@ -1,10 +1,12 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import "../css/font.css";
 import styled, {keyframes} from 'styled-components'
 import Social from '../component/Social';
 import { Button } from '@mui/material';
 import Nav from '../component/Nav'
 import IDCard from '../component/IDCard';
+// import instance from '../component/instance'
+import axios from 'axios'
 
 const ani = keyframes`
     0% {
@@ -25,7 +27,6 @@ const unani = keyframes`
 const LeftContainer = styled.div`
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
     position: fixed;
     z-index: 2;
