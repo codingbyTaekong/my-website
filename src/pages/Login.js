@@ -10,12 +10,13 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import axios from "axios";
 
-
+import { useNavigate } from 'react-router-dom'
 
 
 
 const JWT_EXPIRY_TIME = 24 * 3600 * 1000; // 만료 시간 (24시간 밀리 초로 표현)
 function Login() {
+  let navigate = useNavigate();
   const [inputs, setInputs] = useState({
     id: "",
     pwd: "",
@@ -31,12 +32,15 @@ function Login() {
   };
   const onLoginSuccess = (response) => {
     console.log(response)
-    const { accessToken } = response.data;
+    const { accessToken, rule } = response.data;
     // accessToken 설정
     axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
     // 화면 리다이렉션 어드민인 경우 어드민 페이지로 일반 유저일 경우 블로그로 이동
-    
-    
+    if (rule === 2) {
+      navigate('/admin')
+    } else {
+      navigate('/')
+    }    
   };
 
   const onChange = (e) => {
